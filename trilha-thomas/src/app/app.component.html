@@ -1,4 +1,15 @@
-<app-header class="header"></app-header>
-<div class="body">
-  <pages></pages>
+<div *ngIf="!loader" class="spinner" role="status">
+  <img
+    data-aos="zoom-out"
+    data-aos-duration="3000"
+    src="../assets/spinner.png"
+    alt=""
+  />
+</div>
+
+<div *ngIf="loader" data-aos="zoom-in">
+  <app-header class="header"></app-header>
+  <div class="body">
+    <pages></pages>
+  </div>
 </div>
