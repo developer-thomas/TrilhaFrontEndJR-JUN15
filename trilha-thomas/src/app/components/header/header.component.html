@@ -30,13 +30,7 @@
   [ngClass]="{ 'toggle-btn': !isToggle, 'close-btn': isToggle }"
 ></button>
 <div [ngClass]="{ 'menu-mobile': isToggle }">
-  <ul
-    class="menu-list"
-    data-aos="zoom-out"
-    data-aos-easing="ease-out-cubic"
-    data-aos-duration="300"
-    *ngIf="isToggle"
-  >
+  <ul class="menu-list" *ngIf="isToggle">
     <li (click)="toggler()" routerLink="">Início</li>
     <li (click)="toggler()" routerLink="/motivation">Motivações</li>
     <li (click)="toggler()" routerLink="/about">Sobre</li>
