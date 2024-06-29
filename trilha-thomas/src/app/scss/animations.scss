@@ -55,3 +55,27 @@
     margin-top: 20px;
   }
 }
+
+// Motivations
+@keyframes floatImageY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes arrowDown {
+  from {
+    transform: translateY(0px);
+    transform: translateY(5px);
+  }
+  to {
+    transform: translateY(5px);
+    transform: translateY(0px);
+  }
+}
