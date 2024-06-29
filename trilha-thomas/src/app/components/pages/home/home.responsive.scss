@@ -43,8 +43,21 @@
     height: 40%;
     margin-top: 40px;
 
+    .circle-img {
+      top: 60%;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 90%;
+      max-width: 95%;
+
+      z-index: -1;
+      animation: rotate 10s forwards infinite;
+      animation-delay: 3.5s;
+    }
+
     .portrait-img {
-      width: 100%;
+      width: 90%;
       height: 90%;
       border-radius: 40%;
       z-index: 2;
@@ -56,7 +69,16 @@
 @media (min-width: 375px) {
   // height para landscape
   .home-section {
+    height: $section-height;
+  }
+
+  .home-section__content {
     height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
   }
 
   .text-introduction {
@@ -72,7 +94,18 @@
 
 @media (min-width: 992px) {
   // mudando flex-direction para lg
+
   .home-section {
+    margin-top: 0;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 90vw;
+    height: $section-height;
+  }
+
+  .home-section__content {
     margin-top: 0;
     display: flex;
     flex-flow: row-reverse nowrap;

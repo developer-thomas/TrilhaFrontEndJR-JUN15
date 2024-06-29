@@ -26,18 +26,6 @@
   }
 }
 
-.circle-img {
-  position: absolute;
-  top: 60%;
-
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 90%;
-  max-width: 95%;
-  z-index: 1;
-  animation: rotate 10s linear infinite;
-}
-
 strong {
   color: $secondary-color;
   font-weight: bold;
