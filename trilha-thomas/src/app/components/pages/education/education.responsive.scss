@@ -3,7 +3,7 @@
   .education-section {
     overflow: auto;
     width: 95vw;
-    height: 100vh;
+    height: $section-height-mobile;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,7 +33,7 @@
 @media (min-width: 375px) {
   .education-section {
     width: 95vw;
-    height: 100vh;
+    height: $section-height-mobile;
 
     display: flex;
     align-items: center;
