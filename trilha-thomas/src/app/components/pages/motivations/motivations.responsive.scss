@@ -1,4 +1,5 @@
 @import "../../../scss/variables.scss";
+@import "../../../scss/animations.scss";
 
 @media (min-width: 270px) {
   h1 {
@@ -12,15 +13,58 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
+    height: $section-height-mobile;
 
     border-radius: 30px;
 
     background-color: $section-background-color;
 
-    height: $section-height-mobile;
+    .motivation-section__content {
+      height: 100%;
+      overflow: auto;
+    }
 
-    p {
-      font-size: 0.8rem;
+    .scrollable-box {
+      position: relative;
+      padding: 10px;
+      font-style: italic;
+      height: 100%;
+      font-size: 1rem;
+      font-weight: 100;
+      z-index: 1;
+      display: flex;
+
+      p {
+        width: 100%;
+      }
+
+      .shadow {
+        position: absolute;
+        top: 85%;
+        left: 0;
+        width: 99%;
+        height: rem-calc(42);
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 1)
+        );
+        pointer-events: none;
+      }
+    }
+
+    // arrow down
+    .shadow::after {
+      position: absolute;
+      content: "↓";
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+      bottom: px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+      animation: arrowDown 1s alternate infinite;
     }
   }
 
@@ -29,21 +73,11 @@
 
     margin-top: 15px;
     text-align: center;
-
-    p {
-      box-shadow: inset 0px -66px 58px -41px rgba(17, 16, 16, 0.8);
-      padding: 10px;
-      font-style: italic;
-      overflow-y: scroll;
-      max-height: 25vh;
-      font-size: 1rem;
-      font-weight: 100;
-    }
   }
 
   .image-container {
     width: 60%;
-
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,28 +86,37 @@
       // 100% de 40% do parent
       height: 100%;
       width: 100%;
-      animation: floatY 3s ease-in-out infinite;
+      animation: floatImageY 3s ease-in-out infinite;
     }
   }
 }
+
 @media (min-width: 375px) {
-  // height para landscape
-  .motivation-section {
+  .motivation-section__content {
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
     height: 100%;
   }
+
   .text-container {
+    width: 90%;
     p {
-      max-height: 35vh;
+      // mexi aq
+      height: 100%;
     }
   }
 }
+
 @media (min-width: 768px) {
   .motivation-section {
     height: $section-height;
   }
 
   .text-container {
-    width: 50%;
     h1 {
       font-size: 2.5rem;
     }
@@ -83,7 +126,8 @@
     }
   }
   .image-container {
-    width: 40%;
+    // height: 100%;
+    margin: 0;
   }
 }
 
