@@ -11,7 +11,7 @@ interface EventItem {
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss', './about.responsive.scss'],
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent implements AfterViewInit {
   basicData: any;
   basicOptions: any;
 
@@ -45,13 +45,15 @@ export class AboutComponent implements OnInit {
       },
     ];
   }
-  ngOnInit() {
+  ngAfterViewInit() {
     this.basicData = {
       labels: [
         'Javascript',
         'Typescript',
         'Angular',
-        'Sass',
+
+        'Photoshop',
+
         'Css',
         'Bootstrap',
         'Tailwind',
@@ -61,12 +63,12 @@ export class AboutComponent implements OnInit {
         'Mongodb',
         'PostgreSQL',
         'Linux',
-        'Photoshop',
+        'Sass',
       ],
       datasets: [
         {
           label: 'Skills',
-          data: [75, 80, 87, 72, 80, 80, 70, 60, 65, 60, 70, 60, 65, 100],
+          data: [75, 80, 87, 72, 80, 80, 70, 70, 65, 60, 70, 60, 65, 100],
           backgroundColor: ['white'],
         },
       ],
