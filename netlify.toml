@@ -1,0 +1,9 @@
+[build]
+  base = "trilha-thomas"
+  publish = "trilha-thomas/dist"
+  command = "npm install && npm run build --prod"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
