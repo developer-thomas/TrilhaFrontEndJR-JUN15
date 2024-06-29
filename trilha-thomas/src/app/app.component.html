@@ -7,8 +7,8 @@
   />
 </div>
 
-<div *ngIf="loader" data-aos="zoom-in">
-  <app-header class="header"></app-header>
+<app-header *ngIf="loader" class="header"></app-header>
+<div *ngIf="loader" data-aos="zoom-in" data-aos-duration="2000">
   <div class="body">
     <pages></pages>
   </div>
