@@ -1,6 +1,6 @@
 [build]
   base = "trilha-thomas"
-  publish = "trilha-thomas/dist"
+  publish = "dist/trilha-thomas"
   command = "npm install && npm run build --prod"
 
 [[redirects]]
